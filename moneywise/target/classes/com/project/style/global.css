@@ -1,0 +1,226 @@
+/* ============================================================
+   GLOBAL — Variables et styles de base MoneyWise
+   ============================================================ */
+
+/*
+   ⚠️ FIX EMOJI LINUX :
+   On ne force PAS -fx-font-family sur * car Segoe UI ne supporte
+   pas les emoji sur Linux/macOS. On laisse JavaFX choisir
+   automatiquement la bonne police selon le contenu.
+   Les éléments texte non-emoji héritent d'Arial via .root
+*/
+
+/* ── Palette de couleurs ── */
+.root {
+    -fx-font-family: "Arial";
+    -fx-font-size: 13px;
+
+    /* Primaires */
+    -color-primary:       #6C63FF;
+    -color-primary-dark:  #574FD6;
+    -color-primary-light: #EAE8FF;
+
+    /* Statuts */
+    -color-success:       #2ECC71;
+    -color-danger:        #E74C3C;
+    -color-warning:       #F39C12;
+    -color-info:          #3498DB;
+
+    /* Neutres */
+    -color-bg:            #F4F6FC;
+    -color-surface:       #FFFFFF;
+    -color-border:        #E0E0E0;
+    -color-text-primary:  #2D3748;
+    -color-text-secondary:#718096;
+    -color-text-muted:    #A0AEC0;
+
+    /* Entrées / Sorties */
+    -color-entree:        #2ECC71;
+    -color-sortie:        #E74C3C;
+
+    -fx-background-color: -color-bg;
+}
+
+/* ── Bouton primaire ── */
+.btn-primary {
+    -fx-background-color: -color-primary;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 12 24;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+.btn-primary:hover {
+    -fx-background-color: -color-primary-dark;
+}
+
+/* ── Bouton secondaire ── */
+.btn-secondary {
+    -fx-background-color: transparent;
+    -fx-text-fill: -color-primary;
+    -fx-font-size: 14px;
+    -fx-border-color: -color-primary;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 11 24;
+    -fx-cursor: hand;
+}
+.btn-secondary:hover {
+    -fx-background-color: -color-primary-light;
+}
+
+/* ── Bouton danger ── */
+.btn-danger {
+    -fx-background-color: -color-danger;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-padding: 10 20;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+.btn-danger:hover {
+    -fx-background-color: #C0392B;
+}
+
+/* ── Champs de saisie ── */
+.input-field {
+    -fx-background-color: -color-surface;
+    -fx-border-color: -color-border;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 10 14;
+    -fx-font-size: 14px;
+    -fx-text-fill: -color-text-primary;
+}
+.input-field:focused {
+    -fx-border-color: -color-primary;
+    -fx-border-width: 1.5;
+}
+
+/* ── Labels ── */
+.label-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -color-text-primary;
+}
+.label-subtitle {
+    -fx-font-size: 14px;
+    -fx-text-fill: -color-text-secondary;
+}
+.label-error {
+    -fx-font-size: 12px;
+    -fx-text-fill: -color-danger;
+}
+.label-success {
+    -fx-font-size: 12px;
+    -fx-text-fill: -color-success;
+}
+.label-link {
+    -fx-text-fill: -color-primary;
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+}
+.label-link:hover {
+    -fx-underline: true;
+}
+
+/* ── Cards ── */
+.card {
+    -fx-background-color: -color-surface;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0, 0, 2);
+    -fx-padding: 24;
+}
+
+/* ── Séparateur ── */
+.separator {
+    -fx-background-color: -color-border;
+}
+
+/* ── ScrollPane propre ── */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+/* ============================================================
+   EMOJI / ICON FIX — Police système pour emoji (Linux/macOS)
+   ============================================================ */
+
+/* KPI cards icônes (💰 💸 🏦 📋) */
+.kpi-icon {
+    -fx-font-size: 22px;
+    -fx-font-family: "Dialog";
+}
+
+/* Icônes sidebar (⌂ ↕ ▦ ◉ 🔔) */
+.nav-item-icon {
+    -fx-font-size: 16px;
+    -fx-text-fill: rgba(255,255,255,0.55);
+    -fx-min-width: 22px;
+    -fx-font-family: "Dialog";
+}
+
+/* Badge alertes */
+.nav-badge {
+    -fx-background-color: #E74C3C;
+    -fx-text-fill: white;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-padding: 2 7;
+    -fx-background-radius: 10;
+    -fx-min-width: 20px;
+    -fx-alignment: center;
+    -fx-font-family: "Dialog";
+}
+
+/* Conseil badge (💡 📈) */
+.conseil-badge {
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-text-fill: rgba(255,255,255,0.65);
+    -fx-font-family: "Dialog";
+}
+
+/* ============================================================
+   RESPONSIVE — Adaptations dynamiques
+   ============================================================ */
+
+.home-root,
+.auth-root {
+    -fx-pref-width:  -1;
+    -fx-pref-height: -1;
+}
+
+.main-layout {
+    -fx-pref-width:  -1;
+    -fx-pref-height: -1;
+}
+
+.scroll-pane > .viewport > * {
+    -fx-pref-width: -1;
+}
+
+.kpi-card {
+    -fx-min-width:  160px;
+    -fx-max-width:  -1;
+    -fx-pref-width: -1;
+}
+
+.table-view {
+    -fx-pref-width:  -1;
+    -fx-pref-height: -1;
+}
+
+.auth-right {
+    -fx-min-width:  420px;
+    -fx-max-width:  520px;
+    -fx-pref-width: 460px;
+}
+.auth-left {
+    -fx-min-width: 300px;
+}

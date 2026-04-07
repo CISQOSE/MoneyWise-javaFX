@@ -1,0 +1,143 @@
+/* ============================================================
+   AUTH — Login & Inscription — Motion UI
+   ============================================================ */
+
+/* ── Root ── */
+.auth-root {
+    -fx-background-color: linear-gradient(
+        to bottom right, #5A54D4, #6C63FF, #7B74FF);
+}
+
+/* ── Panneau gauche ── */
+.auth-left {
+    -fx-background-color: transparent;
+    -fx-padding: 60 40;
+    -fx-alignment: center;
+}
+
+/* ── Panneau droit ── */
+.auth-right {
+    -fx-background-color: white;
+    -fx-background-radius: 24 0 0 24;
+    -fx-padding: 50 50;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 40, 0, -10, 0);
+}
+
+/* ── Card formulaire ── */
+.auth-form-card {
+    -fx-alignment: top-left;
+    -fx-spacing: 0;
+}
+
+/* ── Labels champs ── */
+.auth-field-label {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4A5568;
+}
+
+/* ── Wrapper input avec icône ── */
+.auth-input-wrapper {
+    -fx-background-color: #F7FAFC;
+    -fx-border-color: #E2E8F0;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 4 14 4 10;
+    -fx-pref-height: 46px;
+}
+.auth-input-wrapper:focused-within {
+    -fx-border-color: #6C63FF;
+    -fx-border-width: 1.5;
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(108,99,255,0.15), 8, 0, 0, 2);
+}
+
+/* ── Champ texte sans bordure (dans le wrapper) ── */
+.auth-input-field {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-font-size: 14px;
+    -fx-text-fill: #2D3748;
+    -fx-padding: 8 0;
+}
+.auth-input-field:focused {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+/* ── Bouton principal ── */
+.auth-btn {
+    -fx-background-color: linear-gradient(to right, #6C63FF, #574FD6);
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-padding: 14 0;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(108,99,255,0.4), 12, 0, 0, 4);
+}
+.auth-btn:hover {
+    -fx-background-color: linear-gradient(to right, #574FD6, #4840C0);
+    -fx-effect: dropshadow(gaussian, rgba(108,99,255,0.6), 16, 0, 0, 6);
+}
+.auth-btn:pressed {
+    -fx-background-color: #4840C0;
+    -fx-effect: dropshadow(gaussian, rgba(108,99,255,0.2), 4, 0, 0, 1);
+}
+.auth-btn:disabled {
+    -fx-background-color: #A0AEC0;
+    -fx-effect: none;
+    -fx-opacity: 0.7;
+}
+
+/* ── Lien ── */
+.auth-link {
+    -fx-text-fill: #6C63FF;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+.auth-link:hover {
+    -fx-underline: true;
+    -fx-text-fill: #574FD6;
+}
+
+/* ── Champs anciens (compatibilité) ── */
+.auth-field {
+    -fx-background-color: #F7FAFC;
+    -fx-border-color: #E2E8F0;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 12 14;
+    -fx-font-size: 14px;
+    -fx-pref-width: 340px;
+}
+.auth-field:focused {
+    -fx-border-color: #6C63FF;
+    -fx-border-width: 1.5;
+    -fx-background-color: white;
+}
+
+/* ── ScrollPane transparent ── */
+.auth-right .scroll-pane {
+    -fx-background-color: transparent;
+}
+.auth-right .scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+/* ══════════════════════════════════════════
+   FIX EMOJI LINUX — Police Dialog
+   ══════════════════════════════════════════ */
+
+/* Icônes ✉ 🔒 dans les wrappers input Login/Inscription */
+.auth-icon-label {
+    -fx-font-family: "Dialog";
+    -fx-font-size: 14px;
+    -fx-text-fill: #A0AEC0;
+}
+
+/* Fix pour tous les Labels emoji dans auth-input-wrapper */
+.auth-input-wrapper > Label {
+    -fx-font-family: "Dialog";
+}
