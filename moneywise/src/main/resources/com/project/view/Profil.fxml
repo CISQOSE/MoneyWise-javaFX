@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+
+<HBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.project.controller.ProfilController"
+      styleClass="profil-root"
+      stylesheets="@../style/global.css, @../style/sidebar.css,
+                   @../style/home.css, @../style/profil.css"
+      maxWidth="Infinity" maxHeight="Infinity">
+
+    <fx:include fx:id="sidebar" source="Sidebar.fxml"/>
+
+    <VBox HBox.hgrow="ALWAYS">
+
+        <!-- ══════════════════════════════════ -->
+        <!-- HEADER — cohérent avec Home        -->
+        <!-- ══════════════════════════════════ -->
+        <HBox styleClass="header" alignment="CENTER_LEFT" spacing="0">
+            <VBox spacing="4" HBox.hgrow="ALWAYS">
+                <Label fx:id="headerUser" text="Mon profil"
+                       styleClass="header-title"/>
+                <Label fx:id="headerDate" text=""
+                       styleClass="header-date"/>
+            </VBox>
+            <!-- Badge rôle dans le header -->
+            <HBox spacing="12" alignment="CENTER">
+                <Label fx:id="badgeAdmin" text="Administrateur"
+                       style="-fx-background-color:#FEF3C7;
+                              -fx-text-fill:#D97706;
+                              -fx-font-size:12px;
+                              -fx-font-weight:bold;
+                              -fx-padding:7 14;
+                              -fx-background-radius:8;"
+                       visible="false" managed="false"/>
+                <Label fx:id="badgeInscription" text=""
+                       style="-fx-font-size:12px;
+                              -fx-text-fill:#A0AEC0;"/>
+            </HBox>
+        </HBox>
+
+        <!-- Ligne décorative -->
+        <Region prefHeight="2"
+                style="-fx-background-color:linear-gradient(to right,
+                       #6C63FF 0%, #2ECC71 50%, transparent 100%);
+                       -fx-opacity:0.5;"/>
+
+        <ScrollPane VBox.vgrow="ALWAYS" fitToWidth="true"
+                    styleClass="scroll-pane">
+            <VBox styleClass="home-content" spacing="22">
+
+                <!-- TITRE -->
+                <VBox spacing="2">
+                    <Label text="Paramètres du compte"
+                           styleClass="section-title"/>
+                    <Label text="Gérez vos informations personnelles et vos préférences"
+                           styleClass="section-subtitle"/>
+                </VBox>
+
+                <!-- ══════════════════════════════════ -->
+                <!-- LIGNE 1 : CARTE IDENTITÉ           -->
+                <!-- ══════════════════════════════════ -->
+                <HBox spacing="20" alignment="TOP_LEFT">
+
+                    <!-- Avatar + Identité -->
+                    <VBox styleClass="table-card" spacing="0"
+                          prefWidth="280" minWidth="280" maxWidth="280">
+
+                        <!-- En-tête violet -->
+                        <VBox alignment="CENTER" spacing="0"
+                              style="-fx-background-color:linear-gradient(
+                                     to bottom right, #6C63FF, #574FD6);
+                                     -fx-background-radius:16 16 0 0;
+                                     -fx-padding:30 20 20 20;">
+
+                            <!-- Avatar cercle -->
+                            <StackPane style="-fx-background-color:rgba(255,255,255,0.25);
+                                              -fx-background-radius:50;
+                                              -fx-min-width:80px;
+                                              -fx-min-height:80px;
+                                              -fx-max-width:80px;
+                                              -fx-max-height:80px;">
+                                <Label fx:id="avatarBig" text="?"
+                                       style="-fx-font-size:30px;
+                                              -fx-font-weight:bold;
+                                              -fx-text-fill:white;"/>
+                            </StackPane>
+
+                            <Region prefHeight="14"/>
+
+                            <Label fx:id="profilNomBig" text=""
+                                   style="-fx-font-size:16px;
+                                          -fx-font-weight:bold;
+                                          -fx-text-fill:white;"/>
+                            <Label fx:id="profilEmailBig" text=""
+                                   style="-fx-font-size:12px;
+                                          -fx-text-fill:rgba(255,255,255,0.7);
+                                          -fx-padding:4 0 0 0;"/>
+                        </VBox>
+
+                        <!-- Statistiques sous l'avatar -->
+                        <VBox style="-fx-padding:20;" spacing="0">
+
+                            <HBox styleClass="summary-row"
+                                  alignment="CENTER_LEFT" spacing="12">
+                                <StackPane style="-fx-background-color:#E8F8F;
+                                                  -fx-background-radius:8;
+                                                  -fx-min-width:32px;
+                                                  -fx-min-height:32px;
+                                                  -fx-max-width:32px;
+                                                        -fx-max-height:32px;">
+                                   <StackPane styleClass="kpi-icon-box" style="-fx-background-color:#ECFDF5; -fx-background-radius:22px;">
+                                          <FontIcon iconLiteral="fas-exchange-alt" styleClass="kpi-icon-transaction, kpi-icon" iconSize="20"/>
+                                   </StackPane>
+                                    <Label text=""
+                                           style="-fx-font-size:14px;"/>
+                                </StackPane>
+                                <VBox spacing="1" HBox.hgrow="ALWAYS">
+                                    <Label text="Transactions"
+                                           styleClass="summary-label"/>
+                                    <Label fx:id="statNbTransactions" text="0"
+                                           style="-fx-font-size:13px;
+                                                  -fx-font-weight:bold;
+                                                  -fx-text-fill:#10B981;"/>
+                                </VBox>
+                            </HBox>
+
+                            <HBox styleClass="summary-row"
+                                  alignment="CENTER_LEFT" spacing="12">
+                                <StackPane style="-fx-background-color:#EAE8FF;
+                                                  -fx-background-radius:8;
+                                                  -fx-min-width:32px;
+                                                  -fx-min-height:32px;
+                                                  -fx-max-width:32px;
+                                                  -fx-max-height:32px;">
+                                   <StackPane styleClass="kpi-icon-box, kpi-icon-box-purple">
+                                          <FontIcon iconLiteral="fas-wallet" styleClass="kpi-icon-blue" iconSize="20"/>
+                                   </StackPane>                                  
+                                    <Label text=""
+                                           style="-fx-font-size:14px;"/>
+                                </StackPane>
+                                <VBox spacing="1" HBox.hgrow="ALWAYS">
+                                    <Label text="Solde total"
+                                           styleClass="summary-label"/>
+                                    <Label fx:id="statSolde" text="0 FCFA"
+                                           style="-fx-font-size:13px;
+                                                  -fx-font-weight:bold;
+                                                  -fx-text-fill:#6C63FF;"/>
+                                </VBox>
+                            </HBox>
+
+                            <HBox styleClass="summary-row"
+                                  alignment="CENTER_LEFT" spacing="12">
+                                <StackPane style="-fx-background-color:#F7FAFC;
+                                                  -fx-background-radius:8;
+                                                  -fx-min-width:32px;
+                                                  -fx-min-height:32px;
+                                                  -fx-max-width:32px;
+                                                  -fx-max-height:32px;">
+                                   <StackPane styleClass="kpi-icon-box, kpi-icon-box-green">
+                                          <FontIcon iconLiteral="fas-tags" styleClass="kpi-icon" iconSize="20"/>
+                                   </StackPane>
+                                    <Label text=""
+                                           style="-fx-font-size:14px;"/>
+                                </StackPane>
+                                <VBox spacing="1" HBox.hgrow="ALWAYS">
+                                    <Label text="Catégories"
+                                           styleClass="summary-label"/>
+                                    <Label fx:id="statNbCategories" text="0"
+                                           style="-fx-font-size:13px;
+                                                  -fx-font-weight:bold;
+                                                  -fx-text-fill:#10B981;"/>
+                                </VBox>
+                            </HBox>
+
+                            <HBox style="-fx-padding:10 0 0 0;"
+                                  alignment="CENTER_LEFT" spacing="12">
+                                <StackPane style="-fx-background-color:#FDECEA;
+                                                  -fx-background-radius:8;
+                                                  -fx-min-width:32px;
+                                                  -fx-min-height:32px;
+                                                  -fx-max-width:32px;
+                                                  -fx-max-height:32px;">
+                                   <StackPane styleClass="kpi-icon-box, kpi-icon-box-red">
+                                          <FontIcon iconLiteral="fas-arrow-down" styleClass="kpi-icon" iconSize="20"/>
+                                   </StackPane>
+                                    <Label text=""
+                                           style="-fx-font-size:14px;"/>
+                                </StackPane>
+                                <VBox spacing="1" HBox.hgrow="ALWAYS">
+                                    <Label text="Dépenses ce mois"
+                                           styleClass="summary-label"/>
+                                    <Label fx:id="statDepensesMois" text="0 FCFA"
+                                           style="-fx-font-size:13px;
+                                                  -fx-font-weight:bold;
+                                                  -fx-text-fill:#E74C3C;"/>
+                                </VBox>
+                            </HBox>
+
+                        </VBox>
+                    </VBox>
+
+                    <!-- Colonne droite : Infos + Mdp -->
+                    <VBox HBox.hgrow="ALWAYS" spacing="20">
+
+                        <!-- INFORMATIONS PERSONNELLES -->
+                        <VBox styleClass="table-card" spacing="0">
+
+                            <HBox alignment="CENTER_LEFT"
+                                  style="-fx-padding:16 20 14 20;">
+                                <VBox HBox.hgrow="ALWAYS" spacing="2">
+                                    <Label text="Informations personnelles"
+                                           styleClass="section-title"/>
+                                    <Label text="Modifiez votre nom et adresse email"
+                                           styleClass="section-subtitle"/>
+                                </VBox>
+                                <Label text="👤"
+                                       style="-fx-font-size:20px; -fx-opacity:0.4;"/>
+                            </HBox>
+
+                            <Separator style="-fx-opacity:0.5;"/>
+
+                            <VBox style="-fx-padding:20;" spacing="16">
+
+                                <HBox spacing="16">
+                                    <!-- Nom -->
+                                    <VBox spacing="6" HBox.hgrow="ALWAYS">
+                                        <Label text="Nom complet"
+                                               styleClass="profil-field-label"/>
+                                        <TextField fx:id="nomField"
+                                                   styleClass="profil-field"
+                                                   maxWidth="Infinity"/>
+                                    </VBox>
+                                    <!-- Email -->
+                                    <VBox spacing="6" HBox.hgrow="ALWAYS">
+                                        <Label text="Adresse email"
+                                               styleClass="profil-field-label"/>
+                                        <TextField fx:id="emailField"
+                                                   styleClass="profil-field"
+                                                   maxWidth="Infinity"/>
+                                    </VBox>
+                                </HBox>
+
+                                <Label fx:id="infoMessage" text=""
+                                       visible="false" managed="false"
+                                       wrapText="true"/>
+
+                                <Button text="✓  Enregistrer les modifications"
+                                        styleClass="quick-btn-primary"
+                                        onAction="#handleModifierInfos"
+                                        maxWidth="Infinity"/>
+                            </VBox>
+                        </VBox>
+
+                        <!-- CHANGER MOT DE PASSE -->
+                        <VBox styleClass="table-card" spacing="0">
+
+                            <HBox alignment="CENTER_LEFT"
+                                  style="-fx-padding:16 20 14 20;">
+                                <VBox HBox.hgrow="ALWAYS" spacing="2">
+                                    <Label text="Sécurité du compte"
+                                           styleClass="section-title"/>
+                                    <Label text="Modifiez votre mot de passe"
+                                           styleClass="section-subtitle"/>
+                                </VBox>
+                                <Label text="🔒"
+                                       style="-fx-font-size:20px; -fx-opacity:0.4;"/>
+                            </HBox>
+
+                            <Separator style="-fx-opacity:0.5;"/>
+
+                            <VBox style="-fx-padding:20;" spacing="16">
+
+                                <HBox spacing="16">
+                                    <VBox spacing="6" HBox.hgrow="ALWAYS">
+                                        <Label text="Mot de passe actuel"
+                                               styleClass="profil-field-label"/>
+                                        <PasswordField fx:id="ancienMdpField"
+                                                       styleClass="profil-field"
+                                                       promptText="••••••••"
+                                                       maxWidth="Infinity"/>
+                                    </VBox>
+                                    <VBox spacing="6" HBox.hgrow="ALWAYS">
+                                        <Label text="Nouveau mot de passe"
+                                               styleClass="profil-field-label"/>
+                                        <PasswordField fx:id="nouveauMdpField"
+                                                       styleClass="profil-field"
+                                                       promptText="Minimum 6 caractères"
+                                                       maxWidth="Infinity"/>
+                                    </VBox>
+                                    <VBox spacing="6" HBox.hgrow="ALWAYS">
+                                        <Label text="Confirmer"
+                                               styleClass="profil-field-label"/>
+                                        <PasswordField fx:id="confirmMdpField"
+                                                       styleClass="profil-field"
+                                                       promptText="••••••••"
+                                                       maxWidth="Infinity"/>
+                                    </VBox>
+                                </HBox>
+
+                                <Label fx:id="mdpMessage" text=""
+                                       visible="false" managed="false"
+                                       wrapText="true"/>
+
+                                <Button text="🔑  Changer le mot de passe"
+                                        styleClass="quick-btn-warning"
+                                        onAction="#handleChangerMdp"
+                                        maxWidth="Infinity"/>
+                            </VBox>
+                        </VBox>
+
+                    </VBox>
+                </HBox>
+
+                <!-- ══════════════════════════════════ -->
+                <!-- LIGNE 2 : PRÉFÉRENCES SYSTÈME      -->
+                <!-- ══════════════════════════════════ -->
+              <!-- <VBox styleClass="table-card" spacing="0">
+
+                    <HBox alignment="CENTER_LEFT"
+                          style="-fx-padding:16 20 14 20;">
+                        <VBox HBox.hgrow="ALWAYS" spacing="2">
+                            <Label text="Préférences système"
+                                   styleClass="section-title"/>
+                            <Label text="Personnalisez l'interface et les notifications"
+                                   styleClass="section-subtitle"/>
+                        </VBox>
+                        <Label text="⚙️"
+                               style="-fx-font-size:20px; -fx-opacity:0.4;"/>
+                    </HBox>
+
+                    <Separator style="-fx-opacity:0.5;"/>
+
+                </VBox> -->
+
+                <!-- ══════════════════════════════════ -->
+                <!-- LIGNE 3 : CONSEIL SÉCURITÉ        -->
+                <!-- ══════════════════════════════════ -->
+                <VBox styleClass="conseil-card" spacing="8">
+                    <Label text="Conseil sécurité"
+                           styleClass="conseil-badge"/>
+                    <Label text="Utilisez un mot de passe d'au moins 8 caractères combinant majuscules, chiffres et symboles pour sécuriser votre compte MoneyWise."
+                           styleClass="conseil-text"
+                           wrapText="true"/>
+                </VBox>
+
+            </VBox>
+        </ScrollPane>
+    </VBox>
+</HBox>

@@ -1,0 +1,478 @@
+/* ============================================================
+   TRANSACTION PAGE
+   ============================================================ */
+
+/* ── Layout principal ── */
+.transaction-root {
+    -fx-background-color: #F8FAFC;
+}
+
+/* ── Contenu ── */
+.transaction-content {
+    -fx-padding: 24 28;
+    -fx-spacing: 20;
+    -fx-background-color: #F8FAFC;
+}
+
+/* ── Barre de filtres ── */
+.filter-bar {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.04), 8, 0, 0, 1);
+    -fx-padding: 12 16;
+    -fx-spacing: 10;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.filter-field {
+    -fx-background-color: #F8FAFC;
+    -fx-border-color: #E2E8F0;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 7 12;
+    -fx-font-size: 12px;
+    -fx-pref-height: 34px;
+}
+.filter-field:focused {
+    -fx-border-color: #6C63FF;
+    -fx-background-color: white;
+}
+
+.filter-combo {
+    -fx-background-color: #F8FAFC;
+    -fx-border-color: #E2E8F0;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-pref-height: 34px;
+    -fx-font-size: 12px;
+}
+.filter-combo:focused {
+    -fx-border-color: #6C63FF;
+}
+.filter-combo .list-cell {
+    -fx-padding: 5 10;
+    -fx-font-size: 12px;
+}
+
+.filter-date {
+    -fx-background-color: #F8FAFC;
+    -fx-border-color: #E2E8F0;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-pref-height: 34px;
+    -fx-pref-width: 130px;
+    -fx-font-size: 12px;
+}
+
+.btn-reset-filter {
+    -fx-background-color: transparent;
+    -fx-text-fill: #64748B;
+    -fx-font-size: 11px;
+    -fx-cursor: hand;
+    -fx-padding: 6 12;
+    -fx-border-color: #E2E8F0;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
+.btn-reset-filter:hover {
+    -fx-background-color: #F1F5F9;
+    -fx-text-fill: #EF4444;
+    -fx-border-color: #EF4444;
+}
+
+/* ── Bouton ajouter ── */
+.btn-add-transaction {
+    -fx-background-color: #6C63FF;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 8 18;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-pref-height: 34px;
+}
+.btn-add-transaction:hover {
+    -fx-background-color: #574FD6;
+}
+
+/* ── Table ── */
+.transaction-table-card {
+    -fx-background-color: white;
+    -fx-background-radius: 14;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.04), 10, 0, 0, 2);
+}
+.transaction-table-header {
+    -fx-padding: 14 20 10 20;
+}
+.transaction-count {
+    -fx-font-size: 11px;
+    -fx-text-fill: #64748B;
+}
+
+/* ── Actions dans la table ── */
+.btn-action-edit {
+    -fx-background-color: #F1F5F9;
+    -fx-text-fill: #6C63FF;
+    -fx-font-size: 11px;
+    -fx-padding: 4 10;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+.btn-action-edit:hover {
+    -fx-background-color: #6C63FF;
+    -fx-text-fill: white;
+}
+.btn-action-delete {
+    -fx-background-color: #FEF2F2;
+    -fx-text-fill: #EF4444;
+    -fx-font-size: 11px;
+    -fx-padding: 4 10;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+.btn-action-delete:hover {
+    -fx-background-color: #EF4444;
+    -fx-text-fill: white;
+}
+
+/* ── Modal ── */
+.modal-root {
+    -fx-background-color: white;
+    -fx-background-radius: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 20, 0, 0, 5);
+    -fx-padding: 28;
+    -fx-spacing: 18;
+    -fx-min-width: 460px;
+    -fx-max-width: 500px;
+}
+.modal-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E293B;
+}
+.modal-field-label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #475569;
+}
+.modal-field {
+    -fx-background-color: #F8FAFC;
+    -fx-border-color: #E2E8F0;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 9 12;
+    -fx-font-size: 13px;
+    -fx-pref-width: 400px;
+}
+.modal-field:focused {
+    -fx-border-color: #6C63FF;
+    -fx-background-color: white;
+    -fx-border-width: 1.5;
+}
+.modal-combo {
+    -fx-background-color: #F8FAFC;
+    -fx-border-color: #E2E8F0;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-pref-width: 400px;
+    -fx-pref-height: 38px;
+    -fx-font-size: 13px;
+}
+.modal-combo:focused {
+    -fx-border-color: #6C63FF;
+}
+.modal-error {
+    -fx-text-fill: #EF4444;
+    -fx-font-size: 11px;
+    -fx-wrap-text: true;
+}
+.modal-btn-save {
+    -fx-background-color: #6C63FF;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 0;
+    -fx-background-radius: 8;
+    -fx-pref-width: 400px;
+    -fx-cursor: hand;
+}
+.modal-btn-save:hover {
+    -fx-background-color: #574FD6;
+}
+.modal-btn-cancel {
+    -fx-background-color: transparent;
+    -fx-text-fill: #64748B;
+    -fx-font-size: 12px;
+    -fx-padding: 8 0;
+    -fx-background-radius: 8;
+    -fx-pref-width: 400px;
+    -fx-cursor: hand;
+    -fx-border-color: #E2E8F0;
+    -fx-border-radius: 8;
+}
+.modal-btn-cancel:hover {
+    -fx-background-color: #F1F5F9;
+    -fx-text-fill: #EF4444;
+    -fx-border-color: #EF4444;
+}
+
+/* ── Toggle ENTREE / SORTIE ── */
+.toggle-entree {
+    -fx-background-color: #ECFDF5;
+    -fx-text-fill: #10B981;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-padding: 8 0;
+    -fx-background-radius: 8 0 0 8;
+    -fx-cursor: hand;
+    -fx-pref-width: 180px;
+}
+.toggle-entree-active {
+    -fx-background-color: #10B981;
+    -fx-text-fill: white;
+}
+.toggle-sortie {
+    -fx-background-color: #FEF2F2;
+    -fx-text-fill: #EF4444;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-padding: 8 0;
+    -fx-background-radius: 0 8 8 0;
+    -fx-cursor: hand;
+    -fx-pref-width: 180px;
+}
+.toggle-sortie-active {
+    -fx-background-color: #EF4444;
+    -fx-text-fill: white;
+}
+
+/* ── Budget item dans transaction ── */
+.budget-progress-item {
+    -fx-padding: 3 0;
+    -fx-spacing: 5;
+}
+.budget-progress-label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #334155;
+}
+.budget-progress-montant {
+    -fx-font-size: 10px;
+    -fx-text-fill: #64748B;
+}
+.budget-progress-pct {
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-min-width: 38px;
+}
+.progress-bar {
+    -fx-pref-height: 6px;
+    -fx-background-radius: 3;
+    -fx-accent: #10B981;
+}
+.progress-bar > .track {
+    -fx-background-color: #F1F5F9;
+    -fx-background-radius: 3;
+}
+.progress-bar-warning > .bar {
+    -fx-background-color: #F59E0B;
+}
+.progress-bar-danger > .bar {
+    -fx-background-color: #EF4444;
+}
+
+/* ── Categorie item ── */
+.categorie-item {
+    -fx-background-color: #F8FAFC;
+    -fx-background-radius: 8;
+    -fx-padding: 8 12;
+    -fx-spacing: 0;
+}
+.categorie-item:hover {
+    -fx-background-color: #F1F5F9;
+}
+.categorie-nom {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #334155;
+}
+.categorie-badge-systeme {
+    -fx-background-color: #E2E8F0;
+    -fx-text-fill: #64748B;
+    -fx-font-size: 9px;
+    -fx-padding: 2 6;
+    -fx-background-radius: 10;
+}
+.btn-action-icon {
+    -fx-background-color: transparent;
+    -fx-font-size: 12px;
+    -fx-cursor: hand;
+    -fx-padding: 3 6;
+    -fx-background-radius: 6;
+}
+.btn-action-icon:hover {
+    -fx-background-color: #E2E8F0;
+}
+
+/* ── Modal Budget ── */
+.modal-budget-root {
+    -fx-background-color: white;
+    -fx-background-radius: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 20, 0, 0, 5);
+    -fx-padding: 24;
+    -fx-spacing: 14;
+    -fx-min-width: 400px;
+}
+
+/* ── Pagination compacte ── */
+.pagination-box {
+    -fx-padding: 8 18;
+    -fx-background-color: #F8FAFC;
+    -fx-border-color: #F1F5F9 transparent transparent transparent;
+}
+
+.pagination-button {
+    -fx-background-color: white;
+    -fx-border-color: #E2E8F0;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+    -fx-padding: 4 10;
+    -fx-font-size: 11px;
+}
+.pagination-button:hover {
+    -fx-background-color: #F1F5F9;
+}
+
+.page-number-btn {
+    -fx-background-color: white;
+    -fx-border-color: #E2E8F0;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+    -fx-min-width: 32px;
+    -fx-pref-width: 32px;
+    -fx-padding: 4 0;
+    -fx-font-size: 12px;
+}
+.page-number-btn:hover {
+    -fx-background-color: #F1F5F9;
+}
+
+/* ============================================================
+   ICÔNES KPI - STYLES SPÉCIFIQUES
+   ============================================================ */
+
+/* Style des boîtes d'icônes (pour qu'elles soient rondes) */
+.kpi-icon-box {
+    -fx-min-width: 44px;
+    -fx-min-height: 44px;
+    -fx-max-width: 44px;
+    -fx-max-height: 44px;
+    -fx-background-radius: 22px;  /* La moitié de la largeur = rond parfait */
+    -fx-alignment: center;
+}
+
+/* Couleurs de fond pour les boîtes */
+.kpi-icon-box-green {
+    -fx-background-color: #ECFDF5;
+}
+
+.kpi-icon-box-red {
+    -fx-background-color: #FEF2F2;
+}
+
+.kpi-icon-box-purple {
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Style des icônes dans les KPI */
+.kpi-icon {
+    -fx-icon-color: #059669;  /* Vert foncé */
+    -fx-icon-size: 20px;
+}
+
+.kpi-icon-red {
+    -fx-icon-color: #EF4444;  /* Rouge vif */
+    -fx-icon-size: 20px;
+}
+
+.kpi-icon-purple {
+    -fx-icon-color: #6C63FF;  /* Violet */
+    -fx-icon-size: 20px;
+}
+/* Icône pour la carte solde (fond violet) */
+.kpi-icon-white {
+    -fx-icon-color: white;
+    -fx-icon-size: 20px;
+}
+
+/* Icône pour la carte transactions */
+.kpi-icon-transaction {
+    -fx-icon-color: #6C63FF;
+    -fx-icon-size: 20px;
+}
+
+/* Style spécifique pour l'icône d'épargne sur fond violet */
+.kpi-icon-box-purple .kpi-icon-white {
+    -fx-icon-color: rgba(255, 255, 255, 0.95);
+}
+
+/* Au survol des KPI (optionnel) */
+.kpi-card:hover .kpi-icon-box {
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+    -fx-transition: all 0.2s ease-in-out;
+}
+
+/* ============================================================
+   STYLES POUR LES ICÔNES DANS LES FILTRES ET BUDGETS
+   ============================================================ */
+
+/* Style pour l'icône chart-pie (total budgété) */
+.budget-icon {
+    -fx-icon-color: #718096;
+    -fx-icon-size: 12px;
+}
+
+/* Style pour l'icône de filtre */
+.filter-icon {
+    -fx-icon-color: #6C63FF;
+    -fx-icon-size: 14px;
+}
+
+/* Style pour l'icône de recherche */
+.search-icon {
+    -fx-icon-color: #94A3B8;
+    -fx-icon-size: 12px;
+}
+
+/* Conteneur pour l'icône de recherche (la rendre alignée) */
+.search-icon-container {
+    -fx-padding: 0 0 0 8;
+}
+
+.conseil-card {
+    -fx-background-color: #6C63FF;
+    -fx-background-radius: 12;
+    -fx-padding: 14;
+    -fx-spacing: 10;
+}
+
+/* Style pour les icônes KPI violettes */
+.kpi-icon-purple {
+    -fx-icon-color: #6C63FF;
+    -fx-icon-size: 20px;
+}
+
+/* Style pour les icônes KPI rouges */
+.kpi-icon-red {
+    -fx-icon-color: #EF4444;
+    -fx-icon-size: 20px;
+}
+
+/* Style pour le placeholder de la table */
+.table-view .placeholder .font-icon {
+    -fx-icon-color: #94A3B8;
+}
+

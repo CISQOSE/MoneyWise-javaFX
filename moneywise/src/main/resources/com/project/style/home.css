@@ -1,0 +1,387 @@
+/* ============================================================
+   HOME — Dashboard expansif MoneyWise
+   ============================================================ */
+
+/* ── Root ── */
+.home-root {
+    -fx-background-color: #F8FAFC;
+}
+
+/* ── Header enrichi ── */
+.header {
+    -fx-background-color: white;
+    -fx-padding: 16 28;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.04), 8, 0, 0, 1);
+    -fx-min-height: 70px;
+}
+.header-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E293B;
+}
+.header-date {
+    -fx-font-size: 12px;
+    -fx-text-fill: #64748B;
+}
+.header-user {
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #334155;
+}
+
+/* Ligne décorative sous le header */
+.header-accent {
+    -fx-background-color: linear-gradient(to right, #6C63FF, #10B981, transparent);
+    -fx-opacity: 0.6;
+    -fx-pref-height: 2px;
+}
+
+/* ── Contenu scrollable ── */
+.home-content {
+    -fx-padding: 24 28;
+    -fx-spacing: 20;
+    -fx-background-color: #F8FAFC;
+}
+
+/* ── Section title ── */
+.section-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E293B;
+}
+.section-subtitle {
+    -fx-font-size: 11px;
+    -fx-text-fill: #94A3B8;
+}
+
+/* ══════════════════════════════════════════ */
+/* KPI CARDS                                  */
+/* ══════════════════════════════════════════ */
+
+.kpi-card {
+    -fx-background-color: white;
+    -fx-background-radius: 14;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.04), 10, 0, 0, 2);
+    -fx-padding: 14 18;
+    -fx-spacing: 8;
+}
+.kpi-card-purple {
+    -fx-background-color: #6C63FF;
+    -fx-background-radius: 14;
+    -fx-effect: dropshadow(gaussian, rgba(108,99,255,0.3), 12, 0, 0, 3);
+    -fx-padding: 14 18;
+    -fx-spacing: 8;
+}
+
+/* Icône box */
+.kpi-icon-box {
+    -fx-min-width: 40px;
+    -fx-min-height: 40px;
+    -fx-max-width: 40px;
+    -fx-max-height: 40px;
+    -fx-background-radius: 12;
+    -fx-alignment: center;
+}
+.kpi-icon-box-green {
+    -fx-background-color: #ECFDF5;
+}
+.kpi-icon-box-red {
+    -fx-background-color: #FEF2F2;
+}
+.kpi-icon-box-purple {
+    -fx-background-color: rgba(255,255,255,0.2);
+}
+.kpi-icon-box-blue {
+    -fx-background-color: #EFF6FF;
+}
+
+/* Style des icônes KPI - couleur plus foncée que le parent */
+.kpi-icon {
+    -fx-icon-color: #059669;  /* Vert plus foncé que #ECFDF5 */
+}
+.kpi-icon-box-red .kpi-icon {
+    -fx-icon-color: #DC2626;  /* Rouge plus foncé que #FEF2F2 */
+}
+.kpi-icon-white {
+    -fx-icon-color: rgba(255,255,255,0.9);
+}
+
+.kpi-icon-blue {
+     -fx-icon-color: #6C63FF;
+}
+
+.kpi-label {
+    -fx-font-size: 10px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #94A3B8;
+    -fx-letter-spacing: 0.5px;
+}
+.kpi-label-white {
+    -fx-font-size: 10px;
+    -fx-font-weight: 600;
+    -fx-text-fill: rgba(255,255,255,0.7);
+}
+.kpi-value {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E293B;
+}
+.kpi-value-green {
+    -fx-text-fill: #10B981;
+}
+.kpi-value-red {
+    -fx-text-fill: #EF4444;
+}
+.kpi-value-white {
+    -fx-text-fill: white;
+}
+
+.kpi-badge-green {
+    -fx-background-color: #ECFDF5;
+    -fx-text-fill: #10B981;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-padding: 2 8;
+    -fx-background-radius: 6;
+}
+.kpi-badge-red {
+    -fx-background-color: #FEF2F2;
+    -fx-text-fill: #EF4444;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-padding: 2 8;
+    -fx-background-radius: 6;
+}
+.kpi-badge-white {
+    -fx-background-color: rgba(255,255,255,0.2);
+    -fx-text-fill: white;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-padding: 2 8;
+    -fx-background-radius: 6;
+}
+.kpi-badge-purple {
+    -fx-background-color: #EAE8FF;
+    -fx-text-fill: #6C63FF;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-padding: 2 8;
+    -fx-background-radius: 6;
+}
+
+.kpi-evolution {
+    -fx-font-size: 10px;
+    -fx-text-fill: #94A3B8;
+}
+.kpi-evolution-white {
+    -fx-font-size: 10px;
+    -fx-text-fill: rgba(255,255,255,0.6);
+}
+
+/* Barre décorative bas de card */
+.kpi-bar-green {
+    -fx-background-color: #10B981;
+    -fx-background-radius: 2;
+    -fx-pref-height: 2px;
+}
+.kpi-bar-red {
+    -fx-background-color: #EF4444;
+    -fx-background-radius: 2;
+    -fx-pref-height: 2px;
+}
+.kpi-bar-white {
+    -fx-background-color: rgba(255,255,255,0.3);
+    -fx-background-radius: 2;
+    -fx-pref-height: 2px;
+}
+
+/* ══════════════════════════════════════════ */
+/* TABLE TRANSACTIONS                         */
+/* ══════════════════════════════════════════ */
+
+.table-card {
+    -fx-background-color: white;
+    -fx-background-radius: 14;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.04), 10, 0, 0, 2);
+    -fx-padding: 0;
+}
+.table-header-zone {
+    -fx-padding: 14 20 10 20;
+}
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+}
+.table-view .column-header-background {
+    -fx-background-color: #F8FAFC;
+    -fx-padding: 0;
+}
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 8 12;
+}
+.table-view .column-header .label {
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #94A3B8;
+    -fx-letter-spacing: 0.5px;
+}
+.table-view .table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #F1F5F9 transparent;
+    -fx-padding: 2 0;
+}
+.table-view .table-row-cell:hover {
+    -fx-background-color: #F8FAFC;
+}
+.table-view .table-cell {
+    -fx-padding: 10 12;
+    -fx-font-size: 12px;
+    -fx-text-fill: #334155;
+    -fx-border-color: transparent;
+}
+
+/* ── Bouton voir tout ── */
+.btn-voir-tout {
+    -fx-background-color: #F1F5F9;
+    -fx-text-fill: #6C63FF;
+    -fx-font-size: 11px;
+    -fx-font-weight: 600;
+    -fx-cursor: hand;
+    -fx-padding: 5 12;
+    -fx-background-radius: 6;
+}
+.btn-voir-tout:hover {
+    -fx-background-color: #6C63FF;
+    -fx-text-fill: white;
+}
+
+/* ══════════════════════════════════════════ */
+/* PANEL DROIT                                */
+/* ══════════════════════════════════════════ */
+
+.side-card {
+    -fx-background-color: white;
+    -fx-background-radius: 14;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.04), 10, 0, 0, 2);
+    -fx-padding: 16;
+}
+
+.side-card-title {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E293B;
+}
+
+/* Boutons accès rapide */
+.quick-btn-primary {
+    -fx-background-color: #6C63FF;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 0;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+.quick-btn-primary:hover {
+    -fx-background-color: #574FD6;
+}
+
+.quick-btn-secondary {
+    -fx-background-color: #F1F5F9;
+    -fx-text-fill: #6C63FF;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 0;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+.quick-btn-secondary:hover {
+    -fx-background-color: #E2E8F0;
+}
+
+.quick-btn-warning {
+    -fx-background-color: #FEF3C7;
+    -fx-text-fill: #D97706;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 0;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+.quick-btn-warning:hover {
+    -fx-background-color: #FDE68A;
+}
+
+/* Résumé mensuel lignes */
+.summary-row {
+    -fx-padding: 8 0;
+    -fx-border-color: transparent transparent #F1F5F9 transparent;
+}
+.summary-icon-box {
+    -fx-min-width: 32px;
+    -fx-min-height: 32px;
+    -fx-max-width: 32px;
+    -fx-max-height: 32px;
+    -fx-background-radius: 8;
+    -fx-alignment: center;
+}
+.summary-label {
+    -fx-font-size: 11px;
+    -fx-text-fill: #64748B;
+}
+.summary-value-green {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #10B981;
+}
+.summary-value-red {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #EF4444;
+}
+.summary-value-purple {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #6C63FF;
+}
+
+/* Carte conseil dégradé */
+.conseil-card {
+    -fx-background-color: linear-gradient(135deg, #6C63FF, #574FD6);
+    -fx-background-radius: 12;
+    -fx-padding: 14;
+    -fx-spacing: 8;
+    -fx-alignment: CENTER_LEFT;
+}
+.conseil-badge {
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-text-fill: rgba(255,255,255,0.7);
+}
+.conseil-text {
+    -fx-font-size: 11px;
+    -fx-text-fill: rgba(255,255,255,0.9);
+    -fx-wrap-text: true;
+}
+
+/* ── Alerte widget ── */
+.alerte-widget {
+    -fx-background-color: #FFFBEB;
+    -fx-border-color: #F59E0B;
+    -fx-border-width: 0 0 0 3;
+    -fx-background-radius: 0 8 8 0;
+    -fx-padding: 12 16;
+    -fx-spacing: 10;
+}
+.alerte-widget-title {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #92400E;
+}
+.alerte-widget-text {
+    -fx-font-size: 11px;
+    -fx-text-fill: #B45309;
+}
